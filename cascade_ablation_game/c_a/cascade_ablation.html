@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="./cascade_ablation.css">
+<script src="./cascade_ablation.js"></script>
+<script src="./konva.min.js"></script>
+
+<audio id="music2" src="../music/music2.mp3"></audio>
+<audio id="music3" src="../music/music3.mp3"></audio>
+<audio id="music4" src="../music/music4.mp3"></audio>
+<audio id="music5" src="../music/music5.mp3"></audio>
+<audio id="music6" src="../music/music6.mp3"></audio>
+<audio id="music7" src="../music/music7.mp3"></audio>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <title>The Game Of Cascade Ablation(Group three)</title>
+
+</head>
+<body>
+    <canvas></canvas>
+    <div id="timer"></div>
+    <div id="score"></div>
+    <h2 id="level_cnt" class="level"></h2>
+    <div class="content">
+        <div id="aim_pic1" class="stages stages-top">
+            <div id="aim_pic_top" class="stage"></div>
+            <div id="aim_pic_top_bg" class="stage_bg">
+                <canvas id="canvasTopBg" width="400px" height="400px"></canvas>
+            </div>
+        </div>
+
+        <div id="aim_pic2" class="stages stages-bottom">
+            <div id="aim_pic_bottom" class="stage"></div>
+            <div id="aim_pic_bottom_bg" class="stage_bg">
+                <canvas id="canvasBottomBg" width="400px" height="400px"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="exit" onmouseover="playMusic3()" onmousedown="playMusic2()" onclick="exitToMain()">退出</div>
+    <div class="tip" onmouseover="playMusic3()" onmousedown="playMusic2()" onclick="tip()">提示</div>
+
+    <div id="passTab" class="pass" style="display: none;">
+        <div class="passBg"></div>
+        <div class="tab">
+            <div><img src="../img/pass.png" style="width: calc(26vw);height: calc(40vw)"/></div>
+            <div class="footer">
+                <div class="btn" onmouseover="playMusic3()" onmousedown="playMusic2()" onclick="next()">下一关</div>
+                <div class="btn" onmouseover="playMusic3()" onmousedown="playMusic2()" onclick="your_score(1)">结束</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="alert" class="pass" style="display: none;">
+        <div class="boxBg"></div>
+        <div class="box1">
+            <div class="title">提示ATTENTION!!!</div>
+            <div class="box_content">是否退出游戏</div>
+            <div class="button">
+                <div class="_btn" onmouseover="playMusic3()"  onmousedown="playMusic2()" onclick="your_score(0)">确认</div>
+                <div class="_btn" onmouseover="playMusic3()"  onmousedown="playMusic2()" onclick="exitToMain()">取消</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="overTab" class="pass" style="display: none;">
+        <div class="passBg"></div>
+        <div class="tab">
+            <div><img src="../img/game_over.png" style="width: calc(26vw);height: calc(40vw)"/></div>
+            <div id="over_content"></div>
+            <div class="_footer">
+                <div class="over_btn" onmouseover="playMusic3()" onmousedown="playMusic2()" onclick="back()">返回</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

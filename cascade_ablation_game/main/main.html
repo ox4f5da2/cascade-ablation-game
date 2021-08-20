@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="./main.css">
+<script src="./main.js"></script>
+<link rel="stylesheet" href="../texiao/style.css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<audio id="music1" src="../music/music1.mp3"></audio>
+<audio id="music2" src="../music/music2.mp3"></audio>
+
+<body>
+    <div class="img"><img src="../img/main.png"/></div>
+    <div class="box">
+        <h1>层叠消融</h1>
+        <div class="selector">
+            <div id="txt1" onmouseover="playMusic1()" onmousedown="playMusic2()" onclick="navigateToGame()">开始游戏</div>
+            <div id="txt2" onmouseover="playMusic1()" onmousedown="playMusic2()" onclick="isHidden('introduce')">游戏说明</div>
+            <div id="txt3" onmouseover="playMusic1()" onmousedown="playMusic2()" onclick="isHidden('level')">难度选择</div>
+        </div>
+    </div>
+    <div id="introduce" class="addition" style="display: none;">
+        <div style="margin-top: 50px;">游戏说明</div>
+        <div>玩家可以先选择游戏难度然后再点击“开始游戏”开始，</div>
+        <div>层叠消融这个是考察的空间推理能力，所以对于玩家的空间想象能力，还有推理能力是有很大的挑战的哦。</div>
+        <div>具体的规则就是要将偶数叠加消融了，然后另外的奇数就要保留。在通过不同的基础图形的形成，就能拼接成对应的目标的数值。</div>
+        <div>其实说起规则来的话，就是有点绕不明白吧，其实简单来说就是偶消奇不消。</div>
+        <div>玩家完成一道题获得10积分，使用一次提示扣除30积分</div>
+        <div style="text-decoration: underline;font-weight: bold;">而且相同图形顺序也是固定的，即使拼出目标图形，但顺序不对也不能算通关。</div>
+    </div>
+    <div id="level" class="addition" style="display: none;">
+        <div id="choose_easy" onmouseover="playMusic1()" onmousedown="playMusic2()" style="margin-top: -60px;" onclick="level_choose(1)">简单</div>
+        <div id="choose_normal" onmouseover="playMusic1()" onmousedown="playMusic2()" onclick="level_choose(2)">中等</div>
+        <div id="choose_difficult" onmouseover="playMusic1()" onmousedown="playMusic2()" onclick="level_choose(3)">困难</div>
+        <div id="choose_hell" onmouseover="playMusic1()" onmousedown="playMusic2()" onclick="level_choose(4)">困难plus</div>
+    </div>
+    <div id="footer">Copyright © Group Three All Rights Reserved</div>
+    <canvas id="canvas"></canvas>
+    <script src='../texiao/TweenMax.min.js'></script>
+    <script  src="../texiao/script.js"></script>
+
+    <div id="box_level" style="display: none;">
+        <div class="mask"></div>
+        <div class="box2">
+            <div class="icon"><p>✔</p></div>
+            <div id="box2_content"></div>
+            <div class="btn_ok" onmouseover="playMusic1()" onmousedown="playMusic2()" onclick="isHidden('box_level')">OK</div>
+        </div>
+    </div>
+</body>
+</html>
